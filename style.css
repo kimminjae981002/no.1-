@@ -58,19 +58,10 @@ body {
 }
 
 .movieCardLine {
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-}
-
-.movieCard {
-  display: flex;
-  align-items: center;
+  display: grid;
   justify-content: center;
-  background-color: rgba(154, 147, 205, 0.77);
-  border-radius: 10px;
-  width: 30%;
-  margin: calc(10% / 3);
+  align-items: center;
+  grid-template-columns: repeat(3, 30%);
 }
 
 .card {
@@ -78,18 +69,22 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  width: 80%;
-  height: 80%;
+  background-color: rgba(154, 147, 205, 0.77);
+  padding: 10px;
+  height: 1000px;
+  border-radius: 10px;
+  margin: calc(10% / 6);
 }
 
 .card > img {
   border-radius: 10px;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 
 .card > .cardTitle {
+  font-size: 20px;
+  font-weight: 700;
   display: flex;
   margin-right: auto;
   padding-top: 20px;
@@ -97,13 +92,38 @@ body {
 }
 
 .card > .cardStory {
+  font-weight: 100;
   display: flex;
   margin-right: auto;
   padding-bottom: 20px;
 }
 
 .card > .cardRatio {
+  font-weight: 100;
+  color: rgb(204, 204, 204);
   display: flex;
   margin-right: auto;
   padding-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+  .header {
+    font-size: 10px;
+  }
+  .searchMovieInputLabel {
+    font-size: 15px;
+  }
+  #searchMovieInput {
+    font-size: 15px;
+    padding: none;
+  }
+  .movieCardLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .movieCard {
+    width: 80%;
+  }
 }
