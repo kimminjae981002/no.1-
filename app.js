@@ -1,5 +1,10 @@
 const movieCardLine = document.querySelector(".movieCardLine");
 const searchInput = document.getElementById("searchMovieInput");
+const searchBtn = document.querySelector(".searchMovieBtn");
+const pageTitle = document.getElementsByTagName("h1");
+
+console.log(pageTitle);
+pageTitle.textContent = "하하ㅏㅎ";
 
 const tmdbKey = "cc94064ab94a0145a45541730eb6f94b";
 
@@ -12,24 +17,36 @@ const fetchMovie = async () => {
   const response = await axios.get(url);
   let data = response.data;
   let results = data.results;
-  for (let i = 0; i < results.length; i++) {
-    let image = results[i].backdrop_path;
-    let title = results[i].title;
-    let overview = results[i].overview;
-    let ratio = results[i].vote_average;
+  results.forEach((movie) => {
+    let image = movie.backdrop_path;
+    let title = movie.title;
+    let overview = movie.overview;
+    let ratio = movie.vote_average;
     let temp_html = `
-    <div class="card">
-      <img
-        src="http://image.tmdb.org/t/p/original/${image}"
-        alt=""/>
-      <span class="cardTitle">${title}</span>
-      <span class="cardStory">${overview}</span>
-      <span class="cardRatio">평점: ${ratio}</span>
-    </div>`;
+        <div class="card">
+          <img
+            src="http://image.tmdb.org/t/p/original/${image}"
+            alt=""/>
+          <span class="cardTitle">${title}</span>
+          <span class="cardStory">${overview}</span>
+          <span class="cardRatio">평점: ${ratio}</span>
+        </div>`;
     movieCardLine.insertAdjacentHTML("afterbegin", temp_html);
+  });
+  for (let i = 0; i < results.length; i++) {
+    const movieCard = document.getElementsByClassName("card");
+    let movieId = results[i].id;
+    let title = results[i].title;
+    movieCard[i].addEventListener("click", function () {
+      alert(`${title} - ID: ${movieId}`);
+    });
   }
 };
 
 fetchMovie();
 
-console.log(searchInput);
+const searchMovie = () => {
+  let userInput = searchInput.value;
+};
+
+searchBtn.addEventListener("click", searchMovie);
