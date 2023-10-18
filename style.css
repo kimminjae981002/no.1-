@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  background-image: url("https://plus.unsplash.com/premium_photo-1689606093808-3cb4393248d2?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D&w=400");
+  background-position: center;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(94, 59, 252, 0.44);
+  color: white;
+}
+
+.movieSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.searchMovieInputLabel {
+  font-size: 30px;
+  color: white;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+#searchMovieInput {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(61, 180, 201);
+}
+
+.searchMovieBtn {
+  width: 50px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  background-color: rgba(59, 172, 252, 0.44);
+}
+
+.searchMovieBtn:hover {
+  background-color: rgba(252, 59, 59, 0.44);
+  cursor: pointer;
+}
+
+.movieCardLine {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.movieCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(154, 147, 205, 0.77);
+  border-radius: 10px;
+  width: 30%;
+  margin: calc(10% / 3);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 80%;
+  height: 80%;
+}
+
+.card > img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.card > .cardTitle {
+  display: flex;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card > .cardStory {
+  display: flex;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+.card > .cardRatio {
+  display: flex;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
