@@ -131,7 +131,8 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .movieCard {
+  .card {
     width: 80%;
+    height: 70%;
   }
 }

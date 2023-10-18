@@ -4,8 +4,12 @@ const searchBtn = document.querySelector(".searchMovieBtn");
 const pageTitle = document.getElementsByTagName("h1");
 const card = document.querySelector(".card");
 
-const tmdbKey = "cc94064ab94a0145a45541730eb6f94b";
+document.onload = function () {
+  searchInput.focus();
+};
 
+searchInput.focus();
+const tmdbKey = "cc94064ab94a0145a45541730eb6f94b";
 const fetchMovie = async () => {
   const url =
     "https://api.themoviedb.org/3/trending/all/week?api_key=" +
@@ -33,13 +37,16 @@ const fetchMovie = async () => {
         </div>`;
     movieCardLine.insertAdjacentHTML("afterbegin", temp_html);
   });
+  // 클릭 시 id 받기 위해 배열을 뒤집어줌
   results.reverse();
+
   // 검색 시 맞는 영화 나오게 하기
   const searchMovie = () => {
     for (let i = 0; i < results.length; i++) {
       let movieCard = document.getElementsByClassName("card");
       let title = results[i].title ? results[i].title : results[i].name;
-      let userInput = searchInput.value;
+      title = title.toLowerCase();
+      let userInput = searchInput.value.toLowerCase();
       let string = title.includes(userInput);
       if (string) {
         movieCard[i].style.display = "block";
@@ -47,15 +54,6 @@ const fetchMovie = async () => {
         movieCard[i].style.display = "none";
       }
     }
-    // results.map((movie) => {
-    //   let movieCard = document.getElementsByClassName("card");
-    //   let title = movie.title ? movie.title : movie.name;
-    //   let userInput = searchInput.value;
-    //   let string = title.includes(userInput);
-    //   if (string) {
-    //     movieCard[0].style.display = "none";
-    //   }
-    // });
   };
 
   searchBtn.addEventListener("click", searchMovie);
