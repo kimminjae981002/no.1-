@@ -10,7 +10,7 @@ const fetchMovie = async () => {
   const url =
     "https://api.themoviedb.org/3/trending/all/week?api_key=" +
     tmdbKey +
-    "&language=ko-KR";
+    "&language=en-EN";
   //api data받아오기
   const response = await axios.get(url);
   let data = response.data;
@@ -35,6 +35,30 @@ const fetchMovie = async () => {
   });
   results.reverse();
   // 검색 시 맞는 영화 나오게 하기
+  const searchMovie = () => {
+    for (let i = 0; i < results.length; i++) {
+      let movieCard = document.getElementsByClassName("card");
+      let title = results[i].title ? results[i].title : results[i].name;
+      let userInput = searchInput.value;
+      let string = title.includes(userInput);
+      if (string) {
+        movieCard[i].style.display = "block";
+      } else {
+        movieCard[i].style.display = "none";
+      }
+    }
+    // results.map((movie) => {
+    //   let movieCard = document.getElementsByClassName("card");
+    //   let title = movie.title ? movie.title : movie.name;
+    //   let userInput = searchInput.value;
+    //   let string = title.includes(userInput);
+    //   if (string) {
+    //     movieCard[0].style.display = "none";
+    //   }
+    // });
+  };
+
+  searchBtn.addEventListener("click", searchMovie);
 
   //   클릭시 id나오게 하기
   for (let i = 0; i < results.length; i++) {

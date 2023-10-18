@@ -5,6 +5,14 @@ body {
   background-size: cover;
 }
 
+.block {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 .header {
   display: flex;
   align-items: center;
