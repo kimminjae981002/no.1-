@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  background-image: url("https://plus.unsplash.com/premium_photo-1689606093808-3cb4393248d2?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D&w=400");
-  background-position: center;
-  background-size: cover;
+  background-color: black;
 }
 
 .block {
@@ -19,7 +17,7 @@ body {
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 20px;
-  background-color: rgba(94, 59, 252, 0.44);
+  background-color: rgba(79, 32, 233, 0.61);
   color: white;
 }
 
@@ -47,7 +45,7 @@ body {
   color: white;
   border: none;
   border-radius: 10px;
-  background-color: rgb(61, 180, 201);
+  background-color: rgba(87, 152, 250, 0.38);
 }
 
 .searchMovieBtn {
@@ -57,11 +55,11 @@ body {
   border-radius: 10px;
   color: white;
   font-weight: 700;
-  background-color: rgba(59, 172, 252, 0.44);
+  background-color: rgba(87, 152, 250, 0.38);
 }
 
 .searchMovieBtn:hover {
-  background-color: rgba(252, 59, 59, 0.44);
+  background-color: rgba(251, 116, 116, 0.84);
   cursor: pointer;
 }
 
@@ -72,25 +70,23 @@ body {
   grid-template-columns: repeat(3, 30%);
 }
 
-.card {
+.movieCard {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(154, 147, 205, 0.77);
+  background-color: rgba(228, 175, 178, 0.69);
   padding: 10px;
-  height: 1000px;
+  height: 800px;
   border-radius: 10px;
   margin: calc(10% / 6);
 }
 
-.card > img {
+.movieCard > .movieImage {
   border-radius: 10px;
-  width: 100%;
-  height: 70%;
 }
 
-.card > .cardTitle {
+.movieCard > .movieTitle {
   font-size: 20px;
   font-weight: 700;
   display: flex;
@@ -99,19 +95,42 @@ body {
   padding-bottom: 20px;
 }
 
-.card > .cardStory {
+.movieCard > .movieInfo {
   font-weight: 100;
   display: flex;
   margin-right: auto;
   padding-bottom: 20px;
 }
 
-.card > .cardRatio {
+.movieCard > .movieRatio {
   font-weight: 100;
   color: rgb(204, 204, 204);
   display: flex;
   margin-right: auto;
   padding-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .header {
+    font-size: 10px;
+  }
+  .searchMovieInputLabel {
+    font-size: 15px;
+  }
+  #searchMovieInput {
+    font-size: 15px;
+    padding: none;
+  }
+  .movieCardLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .movieCard {
+    width: 70%;
+    height: 70%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -131,7 +150,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .card {
+  .movieCard {
     width: 80%;
     height: 70%;
   }
